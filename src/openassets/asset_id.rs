@@ -1,12 +1,12 @@
-use bitcoin_hashes::{hash160, Hash};
 use std::fmt::{self, Display, Formatter};
 use std::str::FromStr;
+use tapyrus::hashes::{hash160, Hash};
 use tapyrus::util::base58;
 use tapyrus::Script;
 
 #[derive(PartialEq, Eq, Debug, Clone)]
 pub struct AssetId {
-    pub hash: bitcoin_hashes::hash160::Hash,
+    pub hash: hash160::Hash,
     pub network: tapyrus::network::constants::Network,
 }
 
@@ -54,7 +54,7 @@ impl FromStr for AssetId {
 #[cfg(test)]
 mod tests {
     use hex::decode as hex_decode;
-    use openassets::asset_id::AssetId;
+    use crate::openassets::asset_id::AssetId;
     use std::str::FromStr;
     use tapyrus::blockdata::script::Builder;
 

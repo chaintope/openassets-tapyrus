@@ -75,9 +75,6 @@ impl Display for Address {
                 prefixed[35..].copy_from_slice(&hash[..]);
                 base58::check_encode_slice_to_fmt(fmt, &prefixed[..])
             }
-            _ => {
-                panic!("unsupported script type");
-            }
         }
     }
 }
@@ -94,7 +91,7 @@ impl OAAddressConverter for tapyrus::Address {
 
 #[cfg(test)]
 mod tests {
-    use openassets::address::OAAddressConverter;
+    use crate::openassets::address::OAAddressConverter;
     use std::str::FromStr;
     use std::string::ToString;
     use tapyrus::network::constants::Network;

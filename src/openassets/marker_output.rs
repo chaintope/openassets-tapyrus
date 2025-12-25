@@ -170,7 +170,8 @@ impl TxOutExt for TxOut {
 #[cfg(test)]
 mod tests {
     use hex::decode as hex_decode;
-    use openassets::marker_output::{Metadata, Payload, TxOutExt};
+    use crate::openassets::marker_output::{Metadata, Payload, TxOutExt};
+    use serde_json::json;
     use tapyrus::blockdata::script::Builder;
     use tapyrus::consensus::serialize;
     use tapyrus::hashes::hex::FromHex;
